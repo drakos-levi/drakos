@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ar" dir="rtl"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>🐉 Drakos 🐉</title><meta name="theme-color" content="#0a0709"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><link rel="icon" href="icon-192.png"><meta name="mobile-web-app-capable" content="yes">
+<title>🐉 Drakos 🐉</title><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script><meta name="theme-color" content="#0a0709"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><link rel="icon" href="icon-192.png"><meta name="mobile-web-app-capable" content="yes">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap">
 <style>
 :root{--bg:#0a0709;--card:#181014;--line:#3b2229;--ember:#d4452f;--gold:#e7b25a;--tx:#f2e8e4;--mu:#a8999b;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -38,6 +38,14 @@ pre.show{display:block}
 .fm input{width:100%;box-sizing:border-box;padding:11px;border-radius:10px;border:1px solid var(--line);background:#0f0a0d;color:var(--tx);font:inherit}
 .fm input[type=color]{height:46px;padding:3px}
 .fm .bt{padding:12px;border-radius:10px;border:0;background:var(--ember);font-weight:800}.fm .bt.g{background:none;border:1px solid var(--line);font-weight:600}
+.wh{position:relative;width:320px;max-width:100%;margin:14px auto 18px}.wh canvas{width:100%;height:auto;display:block;border-radius:50%;border:4px solid var(--gold)}
+.pt{position:absolute;top:-8px;left:50%;margin-left:-13px;border:13px solid transparent;border-top:24px solid var(--gold);border-bottom:0;z-index:2}
+nav{overflow-x:auto;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav button{flex:0 0 auto!important;white-space:nowrap;padding:12px 15px!important}
+.fm select,.fm textarea{width:100%;box-sizing:border-box;padding:11px;border-radius:10px;border:1px solid var(--line);background:#0f0a0d;color:var(--tx);font:inherit}
+.rc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;line-height:1.7}
+.rc .tx{white-space:pre-wrap;word-break:break-word;margin-top:6px;color:#e6d9d6}.mu{color:var(--mu);font-size:.85rem}
+.rc .dl{margin-top:8px;background:none;border:1px solid var(--line);border-radius:8px;padding:4px 12px;color:var(--mu)}
+.dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-left:8px}.dot.g{background:#2fbf5f;box-shadow:0 0 8px #2fbf5f}.dot.r{background:#e03a3a;box-shadow:0 0 8px #e03a3a}
 </style></head>
 <body><div id="app"></div><div id="toast"></div>
 <script>
@@ -84,7 +92,11 @@ sec('⚠️ *القاعدة الذهبية*',['*3 إنذارات = تأديبي*
 ['إشعار مضاعف',ntc('🐉🚨 ⚜️ إِشْعَارُ عُقُوبَةٍ مُضَاعَفَةٍ ⚜️ 🚨','🚫 العقوبة : { طرد وحظر - 5 أيام 🚫 }\n','تنبيه هام:\nتم تطبيق العقوبة المشددة لمدة 5 أيام بسبب المخالفة. الالتزام التام بالقوانين شرط الأساس للعودة. 🔱')],
 ['إشعار مؤبد',ntc('⚠️ ⚜️ عُقوبَةُ نَفْيٍ وَحَظْرٍ مُؤَبَّدٍ ⚜️ ⚠️','','إنذار أخير وخبر هام:\nلقد سقط حق الاستئناف، وصدر الحكم النهائي بنفي العضو وتجريده من كافة الصلاحيات داخل أسوار مملكة دراكوس بلا عودة. القوانين خط أحمر! 🔱')]]}
 ];
-const PV={aquila:{n:'أكويلا',i:'🦅',g:AQ},acacia:{n:'أكاسيا',i:'🌿',g:[]}};
+const AC=JSON.parse(JSON.stringify(AQ)),rp=(a,b)=>AC.forEach(g=>g.f.forEach(f=>{f[1]=f[1].split(a).join(b)}));
+AC[1].f[1][1]=`✦───◇🌿◇───✦\n⨳ الـلـقـب ╎ 『 』\n⨳ الـحـالـة ╎ 『  』\n⨳ مـن طـرف ╎ 『  』\n⨳ المـسـؤول ╎ 『  』\n⨳ الـرقـم ╎ 『  』\n✦───◇🌿◇───✦\n〖𝐀𝐂𝐀𝐂𝐈𝐀『🌿 』𝐖𝐎𝐑𝐊〗`;
+rp('رحاب مملكة 『 𝑨𝒒𝒖𝒊𝒍𝒍𝒂 』','رحاب مقاطعة 『 𝑨𝒄𝒂𝒄𝒊𝒂 』');rp('مقاطعة 𝑨𝒒𝒖𝒊𝒍𝒍𝒂','مقاطعة 𝑨𝒄𝒂𝒄𝒊𝒂');rp('H8p6uJk3jQ7BBdfP6MzGo8','FsL2aM2mLnjHj3JKfKO5Uh');
+rp('── ⋅ ⋅ ── 🦅 ── ⋅ ⋅ ──╮','── ⋅ ⋅ ── 🌿 ── ⋅ ⋅ ──╮');rp('🦅 *تحيات ادارة مقاطعة اكـويـلا* 🦅','🌿 *تحيات ادارة مقاطعة اكـاسـيا* 🌿');rp('🦅 مقاطعة أكويلا','🌿 مقاطعة أكاسيا');
+const PV={aquila:{n:'أكويلا',i:'🦅',g:AQ},acacia:{n:'أكاسيا',i:'🌿',g:AC}};
 const $=s=>document.querySelector(s),app=$('#app');
 let prov=null,tab='f',emp=false,S={};try{prov=localStorage.getItem('prov');emp=localStorage.getItem('emp')==='1';S=JSON.parse(localStorage.getItem('cfg')||'{}')}catch(e){}
 const sv=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){toast('تعذر الحفظ')}},ap=()=>{if(S.c)document.documentElement.style.setProperty('--ember',S.c)};ap();
@@ -93,14 +105,14 @@ async function copy(t){try{await navigator.clipboard.writeText(t)}catch(e){const
 function el(t,c,h){const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
 function pick(){app.innerHTML=`<div class="splash"><h1>${(S.t||'🐉 𝘿𝙧𝙖𝙠𝙤𝙨 🐉').replace(/</g,'&lt;')}</h1><p>أهلاً بك في المملكة. اختر مقاطعتك للدخول.</p>
 <button class="door a" data-p="aquila"><span class="i">🦅</span><span><b>مقاطعة أكويلا</b><small>الاستمارات والتفاعل اليومي</small></span></button>
-<button class="door c" data-p="acacia"><span class="i">🌿</span><span><b>مقاطعة أكاسيا</b><small>الاستمارات والتفاعل اليومي</small></span></button><button class="emp" id="emp">👑 دخول الإمبراطور</button></div>`;
-app.querySelectorAll('.door').forEach(b=>b.onclick=()=>{prov=b.dataset.p;try{localStorage.setItem('prov',prov)}catch(e){}home()});$('#emp').onclick=login;if(S.b)$('.splash').style.background='linear-gradient(180deg,#0a070900 20%,#0a0709f2 78%),url('+S.b+') center top/cover'}
-function home(){const v=PV[prov];app.innerHTML='';
-const h=el('header','',`<b>${v.i} مقاطعة ${v.n}</b>`),sw=el('button','',emp?'👑 تبديل المقاطعة':'تغيير المقاطعة');sw.onclick=emp?()=>{prov=prov=='aquila'?'acacia':'aquila';sv('prov',prov);home()}:pick;h.append(sw);
+<button class="door c" data-p="acacia"><span class="i">🌿</span><span><b>مقاطعة أكاسيا</b><small>الاستمارات والتفاعل اليومي</small></span></button></div>`;
+app.querySelectorAll('.door').forEach(b=>b.onclick=()=>{prov=b.dataset.p;try{localStorage.setItem('prov',prov)}catch(e){}home()});if(S.b)$('.splash').style.background='linear-gradient(180deg,#0a070900 20%,#0a0709f2 78%),url('+S.b+') center top/cover'}
+function home(){const v=PV[prov];app.innerHTML='';un.forEach(f=>f());un=[];
+const h=el('header','',`<b>${v.i} مقاطعة ${v.n}</b>`),sw=el('button','',tp?'👑 تبديل المقاطعة':'تغيير المقاطعة');sw.onclick=tp?()=>{prov=prov=='aquila'?'acacia':'aquila';sv('prov',prov);home()}:pick;h.append(sw);
 const n=el('nav'),b1=el('button',tab=='f'?'on':'','📋 الاستمارات'),b2=el('button',tab=='d'?'on':'','🔥 التفاعل اليومي');
-b1.onclick=()=>{tab='f';home()};b2.onclick=()=>{tab='d';home()};n.append(b1,b2);if(emp){const b3=el('button',tab=='a'?'on':'','⚙️ الأدمن');b3.onclick=()=>{tab='a';home()};n.append(b3)}
+b1.onclick=()=>{tab='f';home()};b2.onclick=()=>{tab='d';home()};const bw=el('button',tab=='w'?'on':'','🎡 عجلة الحظ');bw.onclick=()=>{tab='w';home()};n.append(b1,bw);[['r','📝 التقارير'],['s','🟢 الحالة'],['k','⭐ التقييم'],['c','📢 الشكاوى'],['o','🗳 تنظيم الأعضاء']].concat(emp?[['a','⚙️ الأدمن']]:[]).forEach(([k,t])=>{const b=el('button',tab==k?'on':'',t);b.onclick=()=>{tab=k;home()};n.append(b)})
 const m=el('main');app.append(h,n,m);
-if(tab=='a'&&emp)admin(m);else if(tab=='d')daily(m);
+if(tab=='a'&&emp)admin(m);else if(tab=='w')wheel(m);else if(tab=='r')rep(m);else if(tab=='s')stt(m);else if(tab=='k')rate(m);else if(tab=='c')feed(m,'complaints');else if(tab=='o')feed(m,'org');
 else if(!v.g.length)m.append(el('div','empty','📭 استمارات أكاسيا فاضية دلوقتي.<br>هتتضاف قريب.'));
 else v.g.forEach((g,i)=>{const d=el('details','g',`<summary>${g.n}</summary>`);if(i==0)d.open=true;
 g.f.forEach(([t,x])=>{const f=el('div','f'),r=el('div','fh',`<span>${t}</span>`),bx=el('div'),vw=el('button','','معاينة'),cp=el('button','cp','نسخ'),pr=el('pre');
@@ -124,6 +136,16 @@ const card=(t,x)=>{const f=el('div','f'),h=el('div','fh',`<span>${t}</span>`),cp
 const w=el('details','g',`<summary>${r.d} — ${r.total} رسالة</summary>`),ls=el('div','f');w.open=true;
 ls.innerHTML=r.top.slice(0,10).map((q,i)=>`<div class="fh"><span>${i+1}. ${esc(q[0])}</span><span>${q[1]}</span></div>`).join('');
 w.append(ls,card('التفاعل اليومي',dayTxt(r)),card('جائزة أول رسالة',fmTxt(r)));m.append(w)}
+const WN=['أتوبيس كومبليت','تفكيك الكلمات','معرفة الفواكه','المافيا','سرعة الكتابة','الألوان','معركة العقول'],WC=['#b3202f','#c9962f','#2f6b4f','#5a3a8c','#c8612a','#2a6f97','#8c2f5f'];
+let rot=0;
+function wheel(m){
+m.innerHTML=`<div class="wh"><div class="pt"></div><canvas id="cv" width="320" height="320"></canvas></div><div class="fm"><button class="bt" id="sp">🎡 لف العجلة</button><div id="rs" class="empty" style="display:none"></div></div>`;
+const cv=$('#cv'),c=cv.getContext('2d'),n=WN.length,a=2*Math.PI/n;
+WN.forEach((t,i)=>{c.beginPath();c.moveTo(160,160);c.arc(160,160,158,-Math.PI/2+i*a,-Math.PI/2+(i+1)*a);c.fillStyle=WC[i];c.fill();c.strokeStyle='#0a0709';c.lineWidth=3;c.stroke();
+c.save();c.translate(160,160);c.rotate(-Math.PI/2+(i+.5)*a);c.fillStyle='#fff';c.font='700 15px Cairo,Tahoma,sans-serif';c.textAlign='right';c.fillText(t,144,5);c.restore()});
+cv.style.transform=`rotate(${rot}deg)`;let busy=false;
+$('#sp').onclick=()=>{if(busy)return;busy=true;$('#rs').style.display='none';const i=Math.floor(Math.random()*n),j=(Math.random()-.5)*(360/n)*.7,t=((-((i+.5)*360/n+j))%360+360)%360,d=((t-rot%360)%360+360)%360;rot+=1800+d;cv.style.transition='transform 4.5s cubic-bezier(.12,.7,.1,1)';cv.style.transform=`rotate(${rot}deg)`;
+setTimeout(()=>{busy=false;const r=$('#rs');r.style.display='block';r.innerHTML=`<b style="font-size:1.4rem;color:var(--gold)">🎉 ${WN[i]}</b><br><br>`;const b=el('button','bt','📋 نسخ إعلان الفعالية');b.onclick=()=>copy(AQ[2].f[i][1]);r.append(b)},4700)}}
 async function hs(s){try{const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}catch(e){return btoa(unescape(encodeURIComponent(s)))}}
 function login(){let has='';try{has=localStorage.getItem('pw')||''}catch(e){}
 app.innerHTML=`<main><div class="fm" style="padding-top:60px"><h2>👑 دخول الإمبراطور</h2><label>${has?'كلمة السر':'اعمل كلمة سر جديدة (6 حروف على الأقل)'}</label><input id="pw" type="password" autocomplete="off"><button class="bt" id="ok">دخول</button><button class="bt g" id="bk">رجوع</button></div></main>`;
@@ -134,7 +156,47 @@ $('#at').value=S.t||'🐉 𝘿𝙧𝙖𝙠𝙤𝙨 🐉';$('#ac').value=S.c||'#d
 let nb=null;$('#ab').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const i=new Image();i.onload=()=>{const k=Math.min(1,720/i.width),c=document.createElement('canvas');c.width=i.width*k;c.height=i.height*k;c.getContext('2d').drawImage(i,0,0,c.width,c.height);nb=c.toDataURL('image/jpeg',.7);toast('تم اختيار الصورة')};i.src=r.result};r.readAsDataURL(f)};
 $('#as').onclick=()=>{S={t:$('#at').value.trim(),c:$('#ac').value,b:nb||S.b};sv('cfg',JSON.stringify(S));ap();toast('تم الحفظ ✅')};
 $('#ar').onclick=()=>{S={};sv('cfg','{}');document.documentElement.style.removeProperty('--ember');toast('رجعت للأصل');admin(m)};
-$('#ao').onclick=()=>{emp=false;sv('emp','0');tab='f';pick()}}
-if(emp&&!PV[prov])prov='aquila';prov&&PV[prov]?home():pick();
+$('#ao').onclick=()=>{au&&au.signOut()};access(m)}
+
+const FC={apiKey:"AIzaSyB2FkYmmafsVLbFcdDRrdu8pfySl8jBDe8",authDomain:"drakos-empire.firebaseapp.com",projectId:"drakos-empire",storageBucket:"drakos-empire.firebasestorage.app",messagingSenderId:"703197371479",appId:"1:703197371479:web:e3ff52d2ff19a18f09d712"},EM={a:'admin@drakos.app',l:'lord@drakos.app',e:'emperor@drakos.app'};
+let db=null,au=null,role='',tp=false,cfg={complaints:'top',org:'top'},un=[];
+try{firebase.initializeApp(FC);au=firebase.auth();db=firebase.firestore();db.enablePersistence({synchronizeTabs:true}).catch(()=>{})}catch(e){}
+const cairo=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Cairo'}).format(new Date()),
+wkKey=()=>{const d=new Date(cairo()+'T00:00:00Z');d.setUTCDate(d.getUTCDate()-((d.getUTCDay()+1)%7));return d.toISOString().slice(0,10)},
+ago=t=>{const m=Math.round((Date.now()-t)/6e4);return m<1?'الآن':m<60?'من '+m+' دقيقة':'من '+Math.round(m/60)+' ساعة'},
+lq=()=>{try{return localStorage.getItem('lq')||''}catch(e){return ''}},
+noDb=()=>{toast('محتاج نت أول مرة علشان الأقسام دي');return false},
+delBtn=d=>{const b=el('button','dl','حذف');b.onclick=()=>d.ref.delete();return b};
+function setRole(u){const e=u&&u.email;role=e==EM.e?'e':e==EM.l?'l':e==EM.a?'a':'';emp=role=='e';tp=role=='e'||role=='l'}
+function gate(){app.innerHTML=`<div class="splash"><h1>${(S.t||'🐉 𝘿𝙧𝙖𝙠𝙤𝙨 🐉').replace(/</g,'&lt;')}</h1><p>للأدمنز والرتب فقط. اكتب كود الدخول.</p><div class="fm"><input id="gc" type="password" placeholder="كود الدخول" autocomplete="off"><button class="bt" id="go">دخول</button></div><button class="emp" id="gl">👑 دخول اللورد</button><button class="emp" id="ge">👑 دخول الإمبراطور</button></div>`;
+if(S.b)$('.splash').style.background='linear-gradient(180deg,#0a070900 20%,#0a0709f2 78%),url('+S.b+') center top/cover';
+$('#go').onclick=()=>signin(EM.a,$('#gc').value);$('#gl').onclick=()=>ask(EM.l,'كلمة سر اللورد');$('#ge').onclick=()=>ask(EM.e,'كلمة سر الإمبراطور')}
+function ask(em,lb){app.innerHTML=`<main><div class="fm" style="padding-top:60px"><h2>${lb}</h2><input id="pw" type="password" autocomplete="off"><button class="bt" id="ok">دخول</button><button class="bt g" id="bk">رجوع</button></div></main>`;$('#bk').onclick=gate;$('#ok').onclick=()=>signin(em,$('#pw').value)}
+async function signin(em,pw){if(!au)return noDb();if(!pw)return;try{await au.signInWithEmailAndPassword(em,pw)}catch(e){toast(e.code=='auth/network-request-failed'?'محتاج نت للدخول أول مرة':'الكود غلط')}}
+function rep(m){m.innerHTML=`<div class="fm"><h3>📝 تقرير اليوم</h3><label>اللقب</label><input id="rt"><label>الرتبة</label><input id="rk"><label>التقرير (اكتب كل اللي عملته بالتفصيل)</label><textarea id="rx" rows="6"></textarea><button class="bt" id="rs">إرسال التقرير</button></div><div id="rl" style="margin-top:18px"></div>`;
+$('#rt').value=lq();try{$('#rk').value=localStorage.getItem('rq')||''}catch(e){}
+$('#rs').onclick=()=>{const t=$('#rt').value.trim(),k=$('#rk').value.trim(),x=$('#rx').value.trim();if(!t||!k||!x)return toast('كمل كل الخانات');if(!db)return noDb();sv('lq',t);sv('rq',k);db.collection('reports').add({p:prov,t:Date.now(),ti:t,rk:k,x}).catch(()=>{});$('#rx').value='';toast('تم الإرسال ✅')};
+if(!db)return;const cut=Date.now()-864e5;if(tp)db.collection('reports').where('t','<',cut).get().then(s=>s.forEach(d=>d.ref.delete())).catch(()=>{});
+un.push(db.collection('reports').where('t','>',cut).orderBy('t','desc').onSnapshot(s=>{const L=$('#rl');if(!L)return;L.innerHTML='';const r=s.docs.filter(d=>d.data().p==prov);if(!r.length)return L.append(el('div','empty','لسه مفيش تقارير في آخر 24 ساعة.'));r.forEach(d=>{const x=d.data(),c=el('div','rc',`<b>${esc(x.ti)}</b> · <span class="mu">${esc(x.rk)} · ${ago(x.t)}</span><div class="tx">${esc(x.x)}</div>`);if(tp)c.append(delBtn(d));L.append(c)})},()=>{}))}
+function stt(m){m.innerHTML=`<div class="fm"><h3>🟢 حالتي</h3><label>اللقب</label><input id="st"><button class="bt" id="sg" style="background:#2f8f4e">🟢 متاح</button><button class="bt" id="sr" style="background:#b3202f">🔴 مش متاح / مشغول</button></div><div id="sl" style="margin-top:18px"></div>`;$('#st').value=lq();
+const put=on=>{const t=$('#st').value.trim();if(!t)return toast('اكتب لقبك');if(!db)return noDb();sv('lq',t);db.collection('status').doc(prov+'__'+t.replace(/\//g,'_')).set({p:prov,ti:t,on,t:Date.now()}).catch(()=>{});toast('تم ✅')};
+$('#sg').onclick=()=>put(true);$('#sr').onclick=()=>put(false);
+if(db)un.push(db.collection('status').where('p','==',prov).onSnapshot(s=>{const L=$('#sl');if(!L)return;L.innerHTML='';const r=s.docs.slice().sort((a,b)=>b.data().t-a.data().t);if(!r.length)return L.append(el('div','empty','لسه مفيش حد سجل حالته.'));r.forEach(d=>{const x=d.data(),c=el('div','rc',`<span class="dot ${x.on?'g':'r'}"></span><b>${esc(x.ti)}</b> <span class="mu">${x.on?'متاح':'مش متاح'} · ${ago(x.t)}</span>`);if(tp)c.append(delBtn(d));L.append(c)})},()=>{}))}
+function rate(m){const day=cairo(),wk=wkKey();
+m.innerHTML=(tp?`<div class="fm"><h3>⭐ أفضل 3 مشرفين</h3><label>اليوم (${day})</label><input id="d1" placeholder="الأول"><input id="d2" placeholder="التاني"><input id="d3" placeholder="التالت"><button class="bt" id="ds">حفظ تقييم اليوم</button><label style="margin-top:14px">الأسبوع (من ${wk})</label><input id="w1" placeholder="الأول"><input id="w2" placeholder="التاني"><input id="w3" placeholder="التالت"><button class="bt" id="ws">حفظ تقييم الأسبوع</button></div>`:'')+`<div id="rv" style="margin-top:18px"></div>`;
+const save=(k,key,pre)=>{if(!db)return noDb();const n=[1,2,3].map(i=>$('#'+pre+i).value.trim()).filter(Boolean);db.collection('ratings').doc(prov+'_'+k+'_'+key).set({p:prov,k,key,n,t:Date.now()}).catch(()=>{});toast('تم الحفظ ✅')};
+if(tp){$('#ds').onclick=()=>save('d',day,'d');$('#ws').onclick=()=>save('w',wk,'w')}
+if(db)un.push(db.collection('ratings').where('p','==',prov).onSnapshot(s=>{const L=$('#rv');if(!L)return;L.innerHTML='';const r=s.docs.map(d=>d.data()).sort((a,b)=>b.key.localeCompare(a.key));
+if(tp)[['d',day,'d'],['w',wk,'w']].forEach(([k,key,pre])=>{const x=r.find(q=>q.k==k&&q.key==key);if(x)x.n.forEach((v,i)=>{const e=$('#'+pre+(i+1));if(e&&!e.value)e.value=v})});
+[['d','📅 تقييمات يومية',7],['w','🗓 تقييمات أسبوعية',4]].forEach(([k,t,n])=>{const c=el('div','rc','<b>'+t+'</b>'),l=r.filter(q=>q.k==k).slice(0,n);if(!l.length)c.append(el('div','mu','لسه ما اتحددش.'));l.forEach(q=>c.append(el('div','tx',q.key+': '+['🥇','🥈','🥉'].map((e,i)=>q.n[i]?e+' '+esc(q.n[i]):'').filter(Boolean).join(' · '))));L.append(c)})},()=>{}))}
+function feed(m,col){const c0=col=='complaints',T=c0?['📢 الشكاوى','اكتب شكوتك (على مملكة أو شخص أو موقف)']:['🗳 تنظيم الأعضاء','مين أكتر شخص عمل مشاكل الأسبوع ده؟ وليه؟'];
+m.innerHTML=`<div class="fm"><h3>${T[0]}</h3><label>اللقب</label><input id="fq"><label>${T[1]}</label><textarea id="fx" rows="5"></textarea><button class="bt" id="fs">إرسال</button></div><div id="fl" style="margin-top:18px"></div>`;$('#fq').value=lq();
+$('#fs').onclick=()=>{const t=$('#fq').value.trim(),x=$('#fx').value.trim();if(!t||!x)return toast('كمل الخانات');if(!db)return noDb();sv('lq',t);db.collection(col).add({p:prov,t:Date.now(),ti:t,x}).catch(()=>{});$('#fx').value='';toast('تم الإرسال ✅')};
+if(!(tp||cfg[col]=='all'))return $('#fl').append(el('div','empty','🔒 الإرسال بيوصل للمسؤولين. القائمة بتظهر لهم بس.'));
+if(db)un.push(db.collection(col).where('p','==',prov).onSnapshot(s=>{const L=$('#fl');if(!L)return;L.innerHTML='';const r=s.docs.slice().sort((a,b)=>b.data().t-a.data().t).slice(0,60);if(!r.length)return L.append(el('div','empty','مفيش حاجة لسه.'));r.forEach(d=>{const x=d.data(),c=el('div','rc',`<b>${esc(x.ti)}</b> <span class="mu">${ago(x.t)}</span><div class="tx">${esc(x.x)}</div>`);if(tp)c.append(delBtn(d));L.append(c)})},()=>{}))}
+function access(m){const d=el('div','fm',`<h3>🔐 مين يشوف قايمة الأقسام دي؟</h3><label>الشكاوى</label><select id="vc"><option value="top">أنت واللورد فقط</option><option value="all">كل الأدمنز</option></select><label>تنظيم الأعضاء</label><select id="vo"><option value="top">أنت واللورد فقط</option><option value="all">كل الأدمنز</option></select><button class="bt" id="vs">حفظ</button>`);d.style.marginTop='22px';m.append(d);
+$('#vc').value=cfg.complaints;$('#vo').value=cfg.org;$('#vs').onclick=()=>{if(!db)return noDb();db.doc('config/access').set({complaints:$('#vc').value,org:$('#vo').value}).then(()=>toast('تم الحفظ ✅')).catch(()=>toast('فشل الحفظ'))}}
+function boot(){if(emp&&!PV[prov])prov='aquila';prov&&PV[prov]?home():pick()}
+if(au)au.onAuthStateChanged(u=>{un.forEach(f=>f());un=[];setRole(u);if(!role)return gate();try{db.doc('config/access').onSnapshot(x=>{cfg=Object.assign({complaints:'top',org:'top'},x.exists?x.data():{})},()=>{})}catch(e){}boot()});else{role='a';boot()}
 if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script></body></html>
